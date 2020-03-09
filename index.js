@@ -270,10 +270,10 @@ app.get("/", (req, res) => {
 
 
 const visualRecognition = new VisualRecognitionV3({
-  url: 'https://api.us-south.visual-recognition.watson.cloud.ibm.com/instances/664bdc5f-7c0a-44ef-93d8-32ff8249562d',
+  url: 'url-visual-recognition',
   version: '2018-03-19',
   authenticator: new IamAuthenticator({
-    apikey: 'lOrxsmCPLZcnaU6bXNUS_NpGGYecIfR1GGB3kX83KVi2'
+    apikey: 'apikey-model'
   }),
 })
 
