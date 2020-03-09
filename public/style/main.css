@@ -1,0 +1,236 @@
+/*----- GENERAL -----*/
+
+body, html {
+    height: 100%;
+}
+body,h1,h2,h3,h4,h5,h6 {
+    font-family: "Open Sans Condensed", sans-serif;
+}
+
+.menu {
+    display: none;
+}
+
+#recetas .title, #about .title{
+    padding: 0!important;
+}
+
+/*- For mobile phones: -*/
+@media only screen and (max-width: 680px){
+
+    .title{
+        font-size: 35px!important;
+    }
+
+    #productos, #about div{
+        margin: 0.4em!important;
+        padding-top: 0px!important;
+        padding-left: 0!important;
+        padding-right: 0!important;
+    }
+}
+
+/*---- NAVBAR -----*/
+#myNavbar .w3-bar-item{
+    text-decoration: none;
+    padding: 20px;
+
+}
+
+#myNavbarSmall .w3-bar-item{
+    text-decoration: none;
+}
+#myNavbarSmall .w3-bar-item:hover{
+    background-color: transparent!important;
+    color: white!important;
+}
+
+
+.active{
+    background-color: #0d89bf!important;
+    color: white!important;
+    text-decoration: underline!important;
+    text-decoration-color:white!important;
+   
+}
+
+.active.inicio-btn{
+    background-color: #0c78a7!important;
+    text-decoration: underline!important;
+    text-decoration-color:white!important;
+}
+
+
+/*----- HEADER (INICIO) -----*/
+.title-img {
+    height: -webkit-fill-available;
+    width: -webkit-fill-available;
+}
+
+#home #home-text {
+    width: 100em;
+    height: 3em;
+    padding: 0.9em;
+}
+
+#home .w3-button{
+    text-decoration: none;
+}
+
+#home .btn-recomendame{
+    margin-bottom: 75px!important;
+    text-decoration: none!important;
+}
+
+/*----- RECETAS/RECETAPP -----*/
+
+/*- For mobile phones: -*/
+@media only screen and (max-width: 680px){
+    #recetas button{
+        font-size: 30px!important;
+    }
+    .bg-img-recetapp{
+        background-image: url("/images/app5.jpg");
+        background-size: auto!important;        
+        background-repeat:repeat!important;
+        background-color: #0c78a7;
+    }
+    #recetas div{
+        margin-top: 0!important;
+        margin-left: 2px!important;
+    }
+
+}
+
+.bg-img-recetapp{
+    background-image: url("/images/app5.jpg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-color: #0c78a7;
+}
+
+
+/* Modifica el ol */
+.lista-pasos{
+    counter-reset: li;
+    margin: auto;
+    padding: 0;
+}
+
+/* Modifica todo el li completo (numero + texto) */
+.lista-pasos > li {
+    position: relative;
+    margin: 0 0 12px 1.3em;
+    padding: 4px 8px 4px 20px;
+    list-style: none;    
+}
+
+/* Modifica los números del li */
+.lista-pasos > li::before {
+    border-bottom: solid 3px #0f9bd7;
+    color: black;
+    text-align: center;
+
+    content:counter(li);
+    counter-increment:li;
+    position:absolute;
+    top:-2px;
+    left:-2em;
+    width:2em;
+    margin-right: 8px;
+    padding: 4px;
+    font-weight:bold;
+    
+  }
+
+/*Iconos botones*/
+.fas.fa-external-link-alt , .fas.fa-redo{
+    font-size: 25px;
+    padding: 5px;
+}
+
+/*----- PRODUCTOS -----*/
+
+@media only screen and (max-width: 680px){
+    #productos .title {
+        padding-top: 60px!important;
+    }
+
+}
+#productos .w3-display-topleft{
+    font-size: 26px;
+}
+
+#productos .w3-hide-large .w3-display-topleft{
+    font-size: 15px;
+}
+
+#productos table .w3-image{
+    max-height: 25%!important;
+}
+
+#productos .productos-small{
+    padding: 10px;
+}
+
+/*----- ABOUT -----*/
+
+@media only screen and (max-width: 680px){
+    #about .img-watson-visual {
+        max-width: 20%!important;
+    }
+    #about .img-cloud-foundry {
+        max-width: 40%!important;
+    }
+
+}
+
+#about .img-watson-visual {
+    max-width: 7%;
+}
+
+#about .img-cloud-foundry {
+    max-width: 12%;
+}
+
+
+/*----- MODAL -----*/
+
+.active-modal{
+    background-color: #0f9bd7!important;
+}
+/*- Evita que el modal quede sin poder tocarse y le saca el backdrop(evita que cuando se abra el modal se agregue una parte de la página abajo)-*/
+.modal-backdrop{
+    position: initial;
+    display: none;
+}
+
+/*- Mantiene el modal en la parte de la página y no se va hacia arriba de todo(top)-*/
+body.modal-open {
+    overflow: visible;
+}
+
+.pestañas-modal{
+    display: none;
+}
+
+.active-modal{
+    background-color: cornflowerblue;
+    color: white;
+}
+
+.img-receta{
+    border-style: dotted;
+    border-color: cornflowerblue;
+    max-width: 60%;
+}
+
+
+.ingredientes-title{
+    text-decoration: underline;
+}
+
+body.modal-open {
+    overflow: hidden;
+}
+

@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <title>RecetApp</title>
+  <meta charset="utf-8">
+  <meta name="description"
+    content="Recetapp. Sacale una foto a un alimento y nosotros te ayudamos a hacer la comida de hoy recomendándote una receta.">
+
+  <!--viewport // "user-scalable=no" prevents zooming-->
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no maximum-scale=2">
+
+  <!--AFTER LAST DEBUG DELETE THIS META-website reloaded from the web server with every page view. This leads to longer loading times, but on the other hand, it can be very useful, for example, if a web page's content is constantly being updated.
+           <meta http-equiv="cache-control" content="no-cache"/>-->
+
+  <!--meta to make the status bar translucent in the phone / full-screen browsing-->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+  <!--Adds An iPhone And iPad Icon for Your Website-->
+  <link rel="apple-touch-icon" href="/images/logo.png" />
+  <!--Adds An Android Icon for Your Website-->
+  <link rel="apple-touch-icon-precomposed" href="/images/logo.png" />
+
+  <!-- Add to homescreen for Chrome on Android -->
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="application-name" content="TITLE">
+  <meta name="theme-color" content="#0c78a7">
+  <link rel="icon" type="image/png" href="/images/logo.png" sizes="16x16 32x32" />
+
+  <!-- Add to homescreen for Safari on iOS -->
+  <meta name="apple-mobile-web-app-title" content="TITLE">
+  <meta name="apple-mobile-web-app-status-bar-style" content="#0c78a7">
+
+  <!--w3.css stylesheet and color libraries-->
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-colors-2018.css">
+
+  <!--font awesome v5.8.1 (icons)-->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+    integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+
+  <!-- fonts -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Amatic+SC">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300&display=swap" rel="stylesheet">
+
+
+  <!--Bootstrap 4.4.1-->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+
+  <!-- w3.css color theme -->
+  <link href="./style/w3-theme.css" rel="stylesheet" type="text/css" />
+
+  <!-- font awesome clases -->
+  <link href="./style/font-awesome.css" rel="stylesheet" type="text/css" />
+
+  <!-- btn-upload.css-->
+  <link href="./style/btn-upload.css" rel="stylesheet" type="text/css" />
+
+   <!-- compartir-btns.css -->
+   <link href="./style/compartir-btns.css" rel="stylesheet" type="text/css" />
+
+  <!--my css- created in another file named main.css-->
+  <link href="./style/main.css" rel="stylesheet" type="text/css" />
+
+</head>
+
+<body class="w3-theme-l5" >
+  <!-- Navbar (sit on top) -->
+  <div class="w3-top w3-hide-small">
+    <div class="w3-bar w3-xlarge w3-theme-d3" id="myNavbar">
+
+      <a href="#home" class="w3-bar-item w3-padding inicio-btn" style="max-width: 7%;"><img src="./images/logo.png"
+          alt="Logo Recetapp" class="w3-image w3-border w3-border-theme w3-round" ></a>
+      <a href="#home" class="w3-bar-item w3-button w3-round w3-hover-theme-d2 inicio-btn active" >INICIO</a>
+      <a href="#recetas" class="w3-bar-item w3-button w3-round w3-hover-theme-d2 recetapp-btn" >RECETAPP</a>
+      <a href="#productos" class="w3-bar-item w3-button w3-round w3-hover-theme-d2 productos-btn">PRODUCTOS</a>
+      <a href="#about" class="w3-bar-item w3-button w3-round w3-hover-theme-d2 about-btn">ACERCA DE</a>
+
+    </div>
+  </div>
+
+  <!-- Navbar on small screens (Hidden on medium and large screens) -->
+  <div class="w3-top w3-hide-large w3-hide-medium w3-medium" >
+    <div class="w3-bar w3-theme-d3 w3-center" id="myNavbarSmall">
+
+      <a href="#home" class="w3-bar-item w3-button w3-round inicio-btn active">INICIO</a>
+      <a href="#recetas" class="w3-bar-item w3-button w3-round">RECETAPP</a>
+      <a href="#productos" class="w3-bar-item w3-button w3-round productos-btn">PRODUCTOS</a>
+      <a href="#about" class="w3-bar-item w3-button w3-round about-btn">ACERCA DE</a>
+
+    </div>
+  </div>
+
+
+  <!-- ----- HEADER/ INICIO ----- -->
+  <header class="w3-display-container w3-padding-64 w3-center w3-black" id="home">
+
+    <img src="/images/cocinando2.jpg" alt="boy" class="title-img w3-opacity-min" width="992" height="1108">
+
+    <!-- FOR MEDIUM AND LARGE SCREENS -->
+    <div class="w3-display-topmiddle w3-container w3-center w3-hide-small">
+      <h2 id="home-text" class="w3-jumbo w3-padding-64 w3-margin w3-text-white w3-theme-d3"> ¿Qué vas a comer hoy?</h2>
+    </div>
+
+    <div class="w3-display-bottommiddle w3-padding-64 w3-margin w3-container w3-center w3-hide-small">
+      <a href="#recetas"
+        class="w3-button w3-xxxlarge w3-theme-d4 w3-hover-theme-d3 btn-recomendame w3-round-large w3-ripple">¡Recomendame
+        una
+        receta!</a>
+    </div>
+
+    <!-- FOR SMALL SCREENS -->
+    <div class="w3-display-topmiddle w3-container w3-center w3-hide-medium w3-hide-large">
+      <h2 id="home-text" class="w3-xxlarge w3-margin w3-padding-64 w3-text-white w3-theme-d3">¿Qué vas a comer hoy?</h2>
+    </div>
+
+    <div class="w3-display-middle w3-margin-top w3-container w3-center w3-hide-medium w3-hide-large">
+      <a href="#recetas" class="w3-button w3-xlarge w3-theme-d3 w3-hover-theme-d4 w3-hover-opacity btn-recomendame">¡Recomendame una
+        receta!</a>
+    </div>
+
+  </header>
+
+
+  <!-- ----- RECETAS / CARGAR IMAGEN (RECETAPP) ----- -->
+  <div id="recetas" class="w3-padding-64 bg-img-recetapp">
+    <div class="w3-container w3-padding">
+      <h2 class=" w3-xxxlarge w3-margin w3-padding-32 title w3-text-theme-d3"><b class="w3-border-bottom w3-border-theme-d5">RecetApp</b> </h2><br>
+
+      <div class="w3-margin w3-padding">
+
+        <div class="w3-row">
+          <div class="w3-col l6 m6 s12">
+            <h2 class="">¿No sabés qué cocinar? </h2> <br>
+            <div class="">
+              <ol class="w3-xlarge lista-pasos">
+                <li>Tomá la foto de un producto o <br> ingrediente.</li>
+                <li>Subila a la app.</li>
+                <li>Obtené una receta!</li><br>
+              </ol>
+            </div>
+          </div>
+
+          <div class="w3-col l6 m6 s12">
+            <div style="height:0px; overflow:hidden" onchange="loading()">
+              <input type="file" id="cargar-imagen" name="image" accept=".jpg,.png,.jpeg" />
+            </div>
+
+            <div class="w3-margin w3-center w3-padding w3-hide" id="loading-img">
+              <button class="load-wrapp w3-button w3-theme-l4 w3-border w3-border-theme w3-round-large">
+                <div class="load-3 w3-center">
+                  <p class="w3-xlarge"><b>Subiendo tu foto</b> </p>
+                  <div class="line"></div>
+                  <div class="line"></div>
+                  <div class="line"></div>
+                </div>
+              </button>
+            </div><br>
+
+            <div class="w3-center">
+              <button onclick="chooseFile()"
+                class="w3-button w3-border w3-round-large w3-xxlarge w3-theme w3-hover-theme-l1" id="boton-imagen">
+                Subí una foto <br><i class="fas fa-upload"></i>
+              </button>
+            </div>
+
+
+            <div class="w3-hide w3-center" id="reopen-modal">
+              <button onclick="reopenModal()"
+                class="w3-button w3-border w3-round-large w3-xxlarge w3-theme-d1 w3-hover-theme">
+                Volvé a la receta <i class="fas fa-external-link-alt"></i>
+              </button>
+            </div><br>
+
+            <div class="w3-hide w3-center" id="refresh">
+              <button onclick="chooseFile()"
+                class="w3-button w3-border w3-round-large w3-xxlarge w3-theme w3-hover-theme-l1">
+                Subí otra foto <i class="fas fa-redo"></i>
+              </button>
+            </div>
+
+          </div>
+        </div>
+      </div>
+      
+    </div><br><br>
+    <div class="w3-row-padding w3-container w3-theme-d3">
+      <p class="w3-xlarge w3-center w3-margin">TIPS a tener en cuenta</p>
+      <div class="w3-col l6 m6 s12">
+        <p class="w3-padding w3-large">1) Si "No encuentra tu producto", la imagen:</p>
+        <ul class="w3-large w3-margin">
+          <li>Debe tomarse de UN solo producto / ingrediente a la vez.</li>
+          <li>Revisá que esté enfocada en el objeto (no borrosa).</li>
+          <li>Si está tomada sin luz (oscura) es dificil reconocerla.</li>
+        </ul>
+      </div>
+
+      <div class="w3-col l6 m6 s12">
+        <p class="w3-padding w3-large">2) Si el producto o ingrediente "No está contemplado aún":</p>
+            <ul class="w3-large w3-margin ">
+              <li>Intentá nuevamente en unos días. </li>
+              Con tu foto vamos agregando nuevas recetas todos los días!
+            </ul>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ----- PRODUCTOS ----- -->
+  <div class="w3-padding-32" id="productos">
+    <h2 class="w3-padding-32 w3-xxxlarge w3-margin title w3-text-theme-d3"><b class="w3-border-bottom w3-border-theme-d5">Nuestras Marcas</b></h2><br>
+    <!-- ---For Large Screens--- -->
+    <div class="w3-row-padding w3-hide-medium w3-hide-small">
+
+      <div class="w3-col l4 w3-margin-bottom">
+        <div class="w3-display-container">
+          <div class="w3-display-topleft w3-black w3-padding">Yogurísimo</div>
+          <a href="https://www.yogurisimo.com.ar/" target="blank">
+            <img src="/images/productos/familia_yogurisimo.jpg" alt="Yogurt Yogurísimo" style="width:100%"
+              class="w3-image">
+          </a>
+
+        </div>
+      </div>
+
+      <div class="w3-col l4 w3-margin-bottom">
+        <div class="w3-display-container">
+          <div class="w3-display-topleft w3-black w3-padding">Danonino</div>
+          <a href="https://www.danonino.com.ar/" target="blank">
+            <img src="/images/productos/danonino.png" alt="Yogurt Danonino" style="width:100%" class="w3-image">
+          </a>
+        </div>
+      </div>
+
+      <div class="w3-col l4 w3-margin-bottom">
+        <div class="w3-display-container">
+          <div class="w3-display-topleft w3-black w3-padding">Casancrem</div>
+          <a href="https://www.casanhelp.com.ar/" target="blank">
+            <img src="/images/productos/casancrem.jpg" alt="Queso crema Casancrem" style="width:100%" class="w3-image">
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="w3-row-padding w3-hide-medium w3-hide-small">
+
+      <div class="w3-col l4 w3-margin-bottom">
+        <div class="w3-display-container">
+          <div class="w3-display-topleft w3-black w3-padding">Cindor</div>
+          <a href="http://cindor.com.ar/" target="blank">
+            <img src="/images/productos/familia_cindor.jpg" alt="Chocolatada Cindor" style="width:100%"
+              class="w3-image">
+          </a>
+        </div>
+      </div>
+
+      <div class="w3-col l4 w3-margin-bottom">
+        <div class="w3-display-container">
+          <div class="w3-display-topleft w3-black w3-padding">Villavicencio</div>
+          <a href="http://www.villavicencio.com.ar/" target="blank">
+            <img src="/images/productos/familia_villavicencio.jpg" alt="Agua Villavicencio" style="width:100%"
+              class="w3-image">
+          </a>
+
+        </div>
+      </div>
+
+      <div class="w3-col l4 w3-margin-bottom">
+        <div class="w3-display-container">
+          <div class="w3-display-topleft w3-black w3-padding">Levité</div>
+          <a href="https://www.levite.com.ar/" target="blank">
+            <img src="/images/productos/familia_levite.jpg" alt="Aguas saborizadas Levité" style="width:100%"
+              class="w3-image">
+          </a>
+
+        </div>
+      </div>
+
+    </div>
+
+    <!-- ---For Small and Medium Screens--- -->
+    <div class="w3-row-padding w3-hide-large ">
+
+      <div class="w3-col m6 s6 w3-margin-bottom">
+        <div class="w3-display-container">
+          <div class="w3-display-topleft w3-black w3-padding">Yogurísimo</div>
+          <a href="https://www.yogurisimo.com.ar/" target="blank">
+            <img src="/images/productos/familia_yogurisimo.jpg" alt="Yogurt Yogurísimo" style="width:100%"
+              class="w3-image">
+          </a>
+
+        </div>
+      </div>
+
+      <div class="w3-col m6 s6 w3-margin-bottom">
+        <div class="w3-display-container">
+          <div class="w3-display-topleft w3-black w3-padding">Danonino</div>
+          <a href="https://www.danonino.com.ar/" target="blank">
+            <img src="/images/productos/danonino.png" alt="Yogurt Danonino" style="width:100%" class="w3-image">
+          </a>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="w3-row-padding w3-hide-large">
+
+      <div class="w3-col m6 s6 w3-margin-bottom">
+        <div class="w3-display-container">
+          <div class="w3-display-topleft w3-black w3-padding">Casancrem</div>
+          <a href="https://www.casanhelp.com.ar/" target="blank">
+            <img src="/images/productos/casancrem.jpg" alt="Queso crema Casancrem" style="width:100%" class="w3-image">
+          </a>
+
+        </div>
+      </div>
+
+      <div class="w3-col m6 s6 w3-margin-bottom">
+        <div class="w3-display-container">
+          <div class="w3-display-topleft w3-black w3-padding">Cindor</div>
+          <a href="http://cindor.com.ar/" target="blank">
+            <img src="/images/productos/familia_cindor.jpg" alt="Chocolatada Cindor" style="width:100%"
+              class="w3-image">
+          </a>
+
+        </div>
+      </div>
+
+    </div>
+    <div class="w3-row-padding w3-hide-large">
+
+      <div class="w3-col m6 s6 w3-margin-bottom">
+        <div class="w3-display-container">
+          <div class="w3-display-topleft w3-black w3-padding">Villavicencio</div>
+          <a href="http://www.villavicencio.com.ar/" target="blank">
+            <img src="/images/productos/familia_villavicencio.jpg" alt="Agua Villavicencio" style="width:100%"
+              class="w3-image">
+          </a>
+        </div>
+      </div>
+
+      <div class="w3-col m6 s6 w3-margin-bottom">
+        <div class="w3-display-container">
+          <div class="w3-display-topleft w3-black w3-padding">Levité</div>
+          <a href="https://www.levite.com.ar/" target="blank">
+            <img src="/images/productos/familia_levite.jpg" alt="Aguas saborizadas Levité" style="width:100%"
+              class="w3-image">
+          </a>
+
+        </div>
+      </div>
+
+    </div>
+  
+  </div>
+  </div>
+
+  <!-- ----- ABOUT / ACERCA DE ----- -->
+  <div class="w3-padding-64" id="about">
+    <div class="w3-container w3-padding">
+      <h2 class="w3-padding-32 w3-xxxlarge w3-margin title w3-text-theme-d3"><b class="w3-border-bottom w3-border-theme-d5">Acerca de</b></h2><br>
+      <div class="w3-margin w3-padding">
+      <h2 class=""><b> ¿Qué es RecetApp?</b></h2>
+
+      <p class=" w3-xlarge">
+        RecetApp es una aplicación web que reconoce un producto o ingrediente recibido en una imagen y en base a eso
+        recomienda una receta que lo contiene.
+        Para lograrlo, utiliza la inteligencia artificial provista por la herramienta IBM Watson Visual Recognition.
+        Puede utilizarse desde cualquier dispositivo (celular, tablet, notebook, PC, etc.).
+      </p> <br>
+
+      <h4 class="">Powered by: </h4>
+      <p class="w3-margin">
+        <img src="/images/visual-recognition-logo.png" alt="Watson Visual Recognition Logo" class="w3-image img-watson-visual">
+        <img src="/images/cloud-foundry-logo.png" alt="Cloud Foundry Logo" class="w3-image img-cloud-foundry">
+      </p> <br>
+
+      <h2 class=""><b>¿Quiénes somos?</b></h2>
+      <p class="w3-xlarge">
+        Somos una empresa joven, dinámica e innovadora que brinda soluciones a las Empresas haciendo uso de herramientas
+        basadas en las nuevas tecnologías,
+        con el fin de agregar valor a los productos y servicios que ofrecen a los consumidores.
+      </p>
+    </div>
+  </div>
+
+
+
+  <!-- Footer -->
+  <footer class="w3-container w3-padding w3-center w3-theme-d3 w3-medium">
+    <p class="w3-medium">RECETAPP &copy; 2020 - Paula Farias - IBM</p>
+    <a href="https://www.linkedin.com/in/paulafarias/" target="blank" class="w3-padding"><i
+        class="fab fa-linkedin w3-hover-opacity" style="font-size:x-large; color:azure;"></i></a>
+    <a href="https://github.com/pauladanielafarias" target="blank" class="w3-padding"><i
+        class="fab fa-github w3-hover-opacity" style="font-size:x-large; color:azure;"></i></a> <br>
+  </footer>
+
+
+  <!-- ----- RESPUESTA: MODAL ----- -->
+
+  <div class="w3-modal" id="modal-resultado">
+    <div class="w3-modal-content w3-card-4">
+      <!-- MODAL HEADER: cruz para cerrar el modal + titulo del modal (class) -->
+      <header class="w3-container w3-padding-32 w3-theme-d1 w3-animate-opacity">
+
+        <button onclick="closeModal()" class="w3-button w3-xlarge w3-display-topright w3-hover-theme"><i
+            class="far fa-window-close"></i></button>
+
+        <h2 id="titulo-modal" class="w3-xxxlarge w3-center"></h2>
+      </header>
+
+      <!-- ----- MODAL NAVBAR ----- -->
+      <div class="w3-bar w3-border-bottom w3-xlarge" id="modal-navbar">
+        <div class="w3-row">
+          <button class="w3-third w3-hover-opacity tablink w3-theme-l2 w3-border-theme-d5"
+            onclick="openReceta(event, 'Plato')" id="plato-tab">PLATO</button>
+
+          <button class="w3-third w3-hover-opacity tablink w3-theme-l2 w3-border-theme-d5"
+            onclick="openReceta(event, 'Ingredientes')">INGREDIENTES</button>
+
+          <button class="w3-third w3-hover-opacity tablink w3-theme-l2 w3-border-theme-d5"
+            onclick="openReceta(event, 'Receta')">RECETA</button>
+        </div>
+      </div>
+
+      <!-- ----- MODAL CONTENT ----- -->
+      <div class="w3-modal-content w3-padding">
+        <!-- ----- Pestaña PLATO ----- -->
+        <div id="Plato" class="w3-container pestañas-modal">
+          <h1 class="w3-xlarge w3-margin w3-center">Hoy te recomendamos:<br> 
+            <b class="w3-xxlarge">"<span class="plato-modal"></span>"</b>
+          </h1>
+
+          <div class="shared-panel">
+            <span>Compartí tu receta</span>
+            <a href="https://www.facebook.com/sharer/sharer.php?u=url&t=titulo" target="_blank" class="shared fb" title="Facebook"><i class="fab fa-facebook-square"></i></a>	
+            <a href="https://twitter.com/intent/tweet?text=titulo&url=url&via=user" target="_blank" class="shared tt" title="Twitter"><i class="fab fa-twitter-square"></i></a>
+            <a href="whatsapp://send?text=Titulo - Enlace" data-action="share/whatsapp/share" class="shared wa" title="WhatsApp"><i class="fab fa-whatsapp-square"></i></a>
+            <a href="mailto:?subject=Titulo&body=Texto" target="_blank" class="shared ce" id="sml" title="Email"><i class="far fa-envelope"></i></a>		
+          </div>
+
+          <div class="img-modal w3-center"></div>
+        </div>
+
+        <!-- ----- Pestaña INGREDIENTES ----- -->
+        <div id="Ingredientes" class="w3-container w3-padding pestañas-modal">
+          <div class="w3-row">
+
+            <div class="w3-col l5 m12 s12">
+              <h1 class="w3-xxlarge"> <b><span class="plato-modal"></span></b> </h1><br>
+              <div class="img-modal"></div>
+            </div>
+
+            <div class="w3-col l7 m12 s12">
+              <h2 class=" ingredientes-title">Para hacerlo necesitas: </h2>
+
+              <ul id="ingredientes-modal" class="w3-ul w3-xlarge">
+              </ul>
+              <p class="porciones w3-large w3-margin w3-padding-top"></p>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- ----- Pestaña RECETA ----- -->
+        <div id="Receta" class="w3-container w3-padding pestañas-modal">
+          <div class="w3-row">
+
+            <div class="w3-col l5 m12 s12">
+              <h1 class="w3-xxlarge"> <b><span class="plato-modal"></span></b> </h1><br>
+              <div class="img-modal"></div>
+            </div>
+
+            <div class="w3-col l7 m12 s12">
+              <h2 class="w3-margin ingredientes-title">Forma de preparación: </h2>
+              <p class="porciones w3-large w3-margin"></p>
+
+              <ol id="receta-modal" class="w3-xlarge"></ol>
+            </div>
+          </div>
+
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+
+  <!--jquery-->
+  <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+    crossorigin="anonymous"></script>
+
+  <!--popper-->
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"></script>
+
+  <!--Bootstrap-->
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+    crossorigin="anonymous"></script>
+
+  <!--W3.js-->
+  <script src="https://www.w3schools.com/lib/w3.js"></script>
+
+  <!--Sweet alert-->
+  <script src="sweetalert2.all.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+
+  <!--main.js script-->
+  <script src="./scripts/main.js"></script>
+
+  <!--subirImagen.js script-->
+  <script src="./scripts/subirImagen.js"></script>
+
+   <!--compartir-btns.js script-->
+   <script src="./scripts/compartir-btns.js"></script>
+
+
+  <!--index.js script-->
+  <script src="index.js"></script>
+
+
+
+
+</body>
+
+</html>
