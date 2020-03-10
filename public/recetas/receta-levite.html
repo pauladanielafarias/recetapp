@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <title>RecetApp</title>
+  <meta charset="utf-8">
+  <meta name="description"
+    content="Recetapp. Sacale una foto a un alimento y nosotros te ayudamos a hacer la comida de hoy recomendándote una receta.">
+
+  <!--viewport // "user-scalable=no" prevents zooming-->
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no maximum-scale=2">
+
+  <!--AFTER LAST DEBUG DELETE THIS META-website reloaded from the web server with every page view. This leads to longer loading times, but on the other hand, it can be very useful, for example, if a web page's content is constantly being updated.
+           <meta http-equiv="cache-control" content="no-cache"/>-->
+
+  <!--meta to make the status bar translucent in the phone / full-screen browsing-->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+  <!--Adds An iPhone And iPad Icon for Your Website-->
+  <link rel="apple-touch-icon" href="../images/logo.png" />
+  <!--Adds An Android Icon for Your Website-->
+  <link rel="apple-touch-icon-precomposed" href="../images/logo.png" />
+
+  <!-- Add to homescreen for Chrome on Android -->
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="application-name" content="TITLE">
+  <meta name="theme-color" content="#0c78a7">
+  <link rel="icon" type="image/png" href="../images/logo.png" sizes="16x16 32x32" />
+
+  <!-- Add to homescreen for Safari on iOS -->
+  <meta name="apple-mobile-web-app-title" content="TITLE">
+  <meta name="apple-mobile-web-app-status-bar-style" content="#0c78a7">
+
+  <!--w3.css stylesheet and color libraries-->
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-colors-2018.css">
+
+  <!--font awesome v5.8.1 (icons)-->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+    integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+
+  <!-- fonts -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Amatic+SC">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300&display=swap" rel="stylesheet">
+
+
+  <!--Bootstrap 4.4.1-->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+
+  <!-- w3.css color theme -->
+  <link href="../style/w3-theme.css" rel="stylesheet" type="text/css" />
+
+  <!-- font awesome clases -->
+  <link href="../style/font-awesome.css" rel="stylesheet" type="text/css" />
+
+  <!-- btn-upload.css-->
+  <link href="../style/btn-upload.css" rel="stylesheet" type="text/css" />
+
+  <!-- compartir-btns.css -->
+  <link href="../style/compartir-btns.css" rel="stylesheet" type="text/css" />
+
+  <!--my css- created in another file named main.css-->
+  <link href="../style/main.css" rel="stylesheet" type="text/css" />
+
+   <!--recetas-style.css- created in another file named main.css-->
+   <link href="./recetas-style.css" rel="stylesheet" type="text/css" />
+   
+
+  <body class="w3-blue">
+  <!-- ----- RESPUESTA: MODAL ----- -->
+
+  <div class="w3-modal w3-show w3-text-black" id="modal-resultado">
+
+    <div class="">
+      <a href="https://recetapp.mybluemix.net" class="w3-button w3-xlarge w3-display-topleft w3-margin w3-hover-none">
+        <i class="fas fa-home w3-padding w3-hover-opacity" style="color:cornflowerblue"> </i> 
+      <p class="w3-hover-opacity w3-text-white"> Ir a Recetapp</p>
+      </a>
+    </div> <br>
+
+    <div class="w3-modal-content w3-card-4 w3-margin-top">
+      <!-- MODAL HEADER: cruz para cerrar el modal + titulo del modal (class) -->
+      <header class="w3-container w3-padding-32 w3-theme-d1 w3-animate-opacity">
+
+        <h2 id="titulo-modal" class="w3-xxxlarge w3-center">¿Qué hacer con tu <b
+            style="text-transform:capitalize; color:peachpuff">Levite</b>?</h2>
+      </header>
+
+      <!-- ----- MODAL NAVBAR ----- -->
+      <div class="w3-bar w3-border-bottom w3-xlarge" id="modal-navbar">
+        <div class="w3-row">
+          <button class="w3-third w3-hover-opacity tablink w3-theme-l2 w3-border-theme-d5"
+            onclick="openReceta(event, 'Plato')" id="plato-tab">PLATO</button>
+
+          <button class="w3-third w3-hover-opacity tablink w3-theme-l2 w3-border-theme-d5"
+            onclick="openReceta(event, 'Ingredientes')">INGREDIENTES</button>
+
+          <button class="w3-third w3-hover-opacity tablink w3-theme-l2 w3-border-theme-d5"
+            onclick="openReceta(event, 'Receta')">RECETA</button>
+        </div>
+      </div>
+
+      <!-- ----- MODAL CONTENT ----- -->
+      <div class="w3-modal-content w3-padding">
+        <!-- ----- Pestaña PLATO ----- -->
+        <div id="Plato" class="w3-container pestañas-modal">
+          <h1 class="w3-xlarge w3-margin w3-center">Hoy te recomendamos:<br>
+            <b class="w3-xxlarge">"Long iced tea de Levité"</b>
+          </h1>
+
+          <div class="shared-panel w3-right">
+            <span class="w3-margin">Compartí tu receta</span>
+            <a href="https://www.facebook.com/sharer/sharer.php?u=https://recetapp.mybluemix.net/recetas/receta-levite.html&t=Mira esta receta que me recomendó RecetApp!" target="_blank" class="shared fb"
+              title="Facebook"><i class="fab fa-facebook-square"></i></a>
+            <a href="https://twitter.com/intent/tweet?text=Mira esta receta que me recomendó RecetApp! https://recetapp.mybluemix.net/images/modal/long_iced_tea.jpg&via=RecetApp" target="_blank"
+              class="shared tt" title="Twitter"><i class="fab fa-twitter-square"></i></a>
+            <a href="whatsapp://send?text='Mira esta receta que me recomendó RecetApp! - https://recetapp.mybluemix.net/recetas/receta-levite.html'" data-action="share/whatsapp/share" class="shared wa"
+              title="WhatsApp"><i class="fab fa-whatsapp-square"></i></a>
+              <a href="https://pinterest.com/pin/create/button/?url=https://recetapp.mybluemix.net/recetas/receta-levite.html&media=https://recetapp.mybluemix.net/images/modal/long_iced_tea.jpg&description=Long iced tea de Levité - Mira esta receta que me recomendó RecetApp!" target="_blank" class="shared pin"><i class="fab fa-pinterest-square"></i></a>
+            <a href="mailto:?subject=Mira esta receta que me recomendó RecetApp!body=Mira esta receta que me recomendó RecetApp! https://recetapp.mybluemix.net/images/modal/long_iced_tea.jpg https://recetapp.mybluemix.net/recetas/receta-levite.html" target="_blank" class="shared ce" id="sml" title="Email"><i
+                class="far fa-envelope"></i></a>
+          </div>
+
+          <div class="img-modal w3-center">
+            <img src="../images/modal/long_iced_tea.jpg" alt="Long iced tea" class="w3-image img-receta w3-margin">
+          </div>
+
+        </div>
+        <div id="url-modal" class="w3-hide"></div>
+
+        <!-- ----- Pestaña INGREDIENTES ----- -->
+        <div id="Ingredientes" class="w3-container w3-padding pestañas-modal">
+          <div class="w3-row">
+
+            <div class="w3-col l5 m12 s12">
+              <h1 class="w3-xxlarge"> <b>Long iced tea de Levité</b> </h1><br>
+              <div class="img-modal">
+                <img src="../images/modal/long_iced_tea.jpg" alt="Long iced tea"
+                  class="w3-image img-receta w3-margin">
+              </div>
+            </div>
+
+            <div class="w3-col l7 m12 s12">
+              <h2 class=" ingredientes-title">Para hacerlo necesitas: </h2>
+
+              <ul class="w3-ul w3-xlarge">
+                <li> 250ml de Levité (sabor a elección)</li>
+                <li> 200ml de agua</li>
+                <li> 1 saquito de té (sabor a elección) </li>
+                <li> 2 cucharadas de azúcar</li>
+                <li> Hielo picado</li>
+              </ul>
+              <p class="porciones w3-large w3-margin w3-padding-top"><b>Rinde 1 vaso (largo)</b></p>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- ----- Pestaña RECETA ----- -->
+        <div id="Receta" class="w3-container w3-padding pestañas-modal">
+          <div class="w3-row">
+
+            <div class="w3-col l5 m12 s12">
+              <h1 class="w3-xxlarge"> <b>Long iced tea de Levité</b> </h1><br>
+              <div class="img-modal">
+                <img src="../images/modal/long_iced_tea.jpg" alt="Long iced tea"
+                  class="w3-image img-receta w3-margin">
+              </div>
+            </div>
+
+            <div class="w3-col l7 m12 s12">
+              <h2 class="w3-margin ingredientes-title">Forma de preparación: </h2>
+              <p class="porciones w3-large w3-margin"><b>Rinde 1 vaso (largo)</b></p>
+
+              <ol id="receta-modal" class="w3-xlarge">
+                <li>Vertí el agua en una taza y calentala en el microondas por 2 minutos</li>
+                <li>Poné el azúcar en la taza con agua y revolvé hasta disolver</li>
+                <li>Colocá el saquito de té en el agua, dejalo por 3 minutos y retirá</li>
+                <li>Vertí la levité en un vaso largo y agregá el hielo picado</li><br>
+                <li>Agregá el té al vaso con levité y revolvé</li><br>
+                <h4> <span style="text-decoration: underline;">Tip:</span> Podés decorar el vaso con una rodaja de limón o naranja.</h4>
+               </ol>
+
+            </div>
+          </div>
+
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+
+
+  <!--jquery-->
+  <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+    crossorigin="anonymous"></script>
+
+  <!--popper-->
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"></script>
+
+  <!--Bootstrap-->
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+    crossorigin="anonymous"></script>
+
+  <!--W3.js-->
+  <script src="https://www.w3schools.com/lib/w3.js"></script>
+
+  <!--Sweet alert-->
+  <script src="sweetalert2.all.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+
+  <!--main.js script-->
+  <script src="../scripts/main.js"></script>
+
+  <!--subirImagen.js script-->
+  <script src="../scripts/subirImagen.js"></script>
+
+  <!--compartir-btns.js script-->
+  <script src="../scripts/compartir-btns.js"></script>
+
+
+  <!--index.js script-->
+  <script src="index.js"></script>
+
+
+
+
+</body>
+
+</html>

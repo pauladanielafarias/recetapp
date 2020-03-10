@@ -18,15 +18,15 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 
   <!--Adds An iPhone And iPad Icon for Your Website-->
-  <link rel="apple-touch-icon" href="/images/logo.png" />
+  <link rel="apple-touch-icon" href="./images/logo.png" />
   <!--Adds An Android Icon for Your Website-->
-  <link rel="apple-touch-icon-precomposed" href="/images/logo.png" />
+  <link rel="apple-touch-icon-precomposed" href="./images/logo.png" />
 
   <!-- Add to homescreen for Chrome on Android -->
   <meta name="mobile-web-app-capable" content="yes">
   <meta name="application-name" content="TITLE">
   <meta name="theme-color" content="#0c78a7">
-  <link rel="icon" type="image/png" href="/images/logo.png" sizes="16x16 32x32" />
+  <link rel="icon" type="image/png" href="./images/logo.png" sizes="16x16 32x32" />
 
   <!-- Add to homescreen for Safari on iOS -->
   <meta name="apple-mobile-web-app-title" content="TITLE">
@@ -66,6 +66,7 @@
 
   <!--my css- created in another file named main.css-->
   <link href="./style/main.css" rel="stylesheet" type="text/css" />
+  
 
 </head>
 
@@ -73,7 +74,6 @@
   <!-- Navbar (sit on top) -->
   <div class="w3-top w3-hide-small">
     <div class="w3-bar w3-xlarge w3-theme-d3" id="myNavbar">
-
       <a href="#home" class="w3-bar-item w3-padding inicio-btn" style="max-width: 7%;"><img src="./images/logo.png"
           alt="Logo Recetapp" class="w3-image w3-border w3-border-theme w3-round" ></a>
       <a href="#home" class="w3-bar-item w3-button w3-round w3-hover-theme-d2 inicio-btn active" >INICIO</a>
@@ -83,7 +83,6 @@
 
     </div>
   </div>
-
   <!-- Navbar on small screens (Hidden on medium and large screens) -->
   <div class="w3-top w3-hide-large w3-hide-medium w3-medium" >
     <div class="w3-bar w3-theme-d3 w3-center" id="myNavbarSmall">
@@ -110,8 +109,7 @@
     <div class="w3-display-bottommiddle w3-padding-64 w3-margin w3-container w3-center w3-hide-small">
       <a href="#recetas"
         class="w3-button w3-xxxlarge w3-theme-d4 w3-hover-theme-d3 btn-recomendame w3-round-large w3-ripple">¡Recomendame
-        una
-        receta!</a>
+        una receta!</a>
     </div>
 
     <!-- FOR SMALL SCREENS -->
@@ -169,7 +167,6 @@
               </button>
             </div>
 
-
             <div class="w3-hide w3-center" id="reopen-modal">
               <button onclick="reopenModal()"
                 class="w3-button w3-border w3-round-large w3-xxlarge w3-theme-d1 w3-hover-theme">
@@ -177,7 +174,7 @@
               </button>
             </div><br>
 
-            <div class="w3-hide w3-center" id="refresh">
+            <div class="w3-hide w3-center" id="uploadAgain">
               <button onclick="chooseFile()"
                 class="w3-button w3-border w3-round-large w3-xxlarge w3-theme w3-hover-theme-l1">
                 Subí otra foto <i class="fas fa-redo"></i>
@@ -388,6 +385,7 @@
       </p>
     </div>
   </div>
+  </div>
 
 
 
@@ -408,8 +406,7 @@
       <!-- MODAL HEADER: cruz para cerrar el modal + titulo del modal (class) -->
       <header class="w3-container w3-padding-32 w3-theme-d1 w3-animate-opacity">
 
-        <button onclick="closeModal()" class="w3-button w3-xlarge w3-display-topright w3-hover-theme"><i
-            class="far fa-window-close"></i></button>
+        <button onclick="closeModal()" class="w3-button w3-xlarge w3-display-topright w3-hover-theme"><i class="far fa-window-close"></i></button>
 
         <h2 id="titulo-modal" class="w3-xxxlarge w3-center"></h2>
       </header>
@@ -417,14 +414,11 @@
       <!-- ----- MODAL NAVBAR ----- -->
       <div class="w3-bar w3-border-bottom w3-xlarge" id="modal-navbar">
         <div class="w3-row">
-          <button class="w3-third w3-hover-opacity tablink w3-theme-l2 w3-border-theme-d5"
-            onclick="openReceta(event, 'Plato')" id="plato-tab">PLATO</button>
+          <button class="w3-third w3-hover-opacity tablink w3-theme-l2 w3-border-theme-d5" onclick="openReceta(event, 'Plato')" id="plato-tab">PLATO</button>
 
-          <button class="w3-third w3-hover-opacity tablink w3-theme-l2 w3-border-theme-d5"
-            onclick="openReceta(event, 'Ingredientes')">INGREDIENTES</button>
+          <button class="w3-third w3-hover-opacity tablink w3-theme-l2 w3-border-theme-d5" onclick="openReceta(event, 'Ingredientes')">INGREDIENTES</button>
 
-          <button class="w3-third w3-hover-opacity tablink w3-theme-l2 w3-border-theme-d5"
-            onclick="openReceta(event, 'Receta')">RECETA</button>
+          <button class="w3-third w3-hover-opacity tablink w3-theme-l2 w3-border-theme-d5" onclick="openReceta(event, 'Receta')">RECETA</button>
         </div>
       </div>
 
@@ -432,21 +426,28 @@
       <div class="w3-modal-content w3-padding">
         <!-- ----- Pestaña PLATO ----- -->
         <div id="Plato" class="w3-container pestañas-modal">
-          <h1 class="w3-xlarge w3-margin w3-center">Hoy te recomendamos:<br> 
-            <b class="w3-xxlarge">"<span class="plato-modal"></span>"</b>
-          </h1>
-
-          <div class="shared-panel">
-            <span>Compartí tu receta</span>
-            <a href="https://www.facebook.com/sharer/sharer.php?u=url&t=titulo" target="_blank" class="shared fb" title="Facebook"><i class="fab fa-facebook-square"></i></a>	
-            <a href="https://twitter.com/intent/tweet?text=titulo&url=url&via=user" target="_blank" class="shared tt" title="Twitter"><i class="fab fa-twitter-square"></i></a>
-            <a href="whatsapp://send?text=Titulo - Enlace" data-action="share/whatsapp/share" class="shared wa" title="WhatsApp"><i class="fab fa-whatsapp-square"></i></a>
-            <a href="mailto:?subject=Titulo&body=Texto" target="_blank" class="shared ce" id="sml" title="Email"><i class="far fa-envelope"></i></a>		
+          <div class="shared-panel w3-right">
+            <h3 class="w3-large w3-padding">Compartí tu receta</h3>
+            <div class="w3-right">
+              <a href="" target="_blank" class="shared fb" title="Facebook" ><i class="fab fa-facebook-square"></i></a>	
+              <a href="" target="_blank" class="shared tt" title="Twitter"><i class="fab fa-twitter-square"></i></a>
+              <a href="" target="_blank" data-action="share/whatsapp/share" class="shared wa" title="WhatsApp"><i class="fab fa-whatsapp-square"></i></a>
+              <a href="" target="_blank" class="shared pin"><i class="fab fa-pinterest-square"></i></a>
+              <a href="" target="_blank" class="shared ce" id="sml" title="Email"><i class="far fa-envelope"></i></a>
+            </div>
           </div>
 
+          <div class="w3-padding w3-margin">
+            <h1 class="w3-xlarge w3-margin w3-center">Hoy te recomendamos:<br> 
+              <b class="w3-xxlarge">"<span class="plato-modal"></span>"</b>
+            </h1>
+          </div>
           <div class="img-modal w3-center"></div>
-        </div>
 
+        </div>
+        <div id="url-modal" class="w3-hide"></div>
+        <a href="recetas-html/receta-yogurisimo.html"></a>
+        
         <!-- ----- Pestaña INGREDIENTES ----- -->
         <div id="Ingredientes" class="w3-container w3-padding pestañas-modal">
           <div class="w3-row">
@@ -491,6 +492,7 @@
     </div>
   </div>
 
+     
 
   <!--jquery-->
   <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="

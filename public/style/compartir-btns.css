@@ -13,3 +13,15 @@
 .fa-envelope{
     color: indianred;
 }
+
+.fa-pinterest-square{
+    color: brown;
+}
+
+/*For medium and large screens*/
+@media only screen and (min-width: 680px){
+    .fa-facebook-square, .fa-twitter-square, .fa-whatsapp-square, .fa-envelope, .fa-pinterest-square {
+        font-size: 2em;
+    }
+
+}

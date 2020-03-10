@@ -222,15 +222,11 @@ body.modal-open {
 .img-receta{
     border-style: dotted;
     border-color: cornflowerblue;
-    max-width: 60%;
+    max-width: 80%;
 }
 
 
 .ingredientes-title{
     text-decoration: underline;
-}
-
-body.modal-open {
-    overflow: hidden;
 }
 
