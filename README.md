@@ -6,7 +6,7 @@
 #### Web app responsive in which you upload a food picture and it recommends you a recipe. 
 - The app is in Spanish.
 
-### :computer: Tecnologías: 
+### :computer: Tecnologías utilizadas: 
 - **Front-end:** 
   - HTML5
   - CSS3
